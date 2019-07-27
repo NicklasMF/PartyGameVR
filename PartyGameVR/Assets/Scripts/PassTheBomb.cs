@@ -8,7 +8,6 @@ public class PassTheBomb : MonoBehaviour {
     public PlayerController[] players;
     [HideInInspector] public PassTheBombUI UI;
 
-    public int pointsPrSecond = 1;
     public bool gameStarted = false;
     public bool isBombInPlay = false;
 	public bool canPlaceBomb = false;
@@ -16,8 +15,6 @@ public class PassTheBomb : MonoBehaviour {
     public Vector3 bombStartPosition;
 
     [SerializeField] GameObject bombPrefab;
-    [SerializeField] AudioClip tickingBomb;
-    [SerializeField] AudioClip explodingBomb;
 
     List<GameObject> bombsInPlay = new List<GameObject>();
 
@@ -32,9 +29,12 @@ public class PassTheBomb : MonoBehaviour {
 	[Header("Game Settings")]
 	public int roundsPerGame = 5;
 	public int currentRound;
+	public int pointsPrSecond = 1;
+	[SerializeField] AudioClip tickingBomb;
+	[SerializeField] AudioClip explodingBomb;
+	public BombType[] bombTypes;
 
 	[Header("Debug")]
-	public BombType[] bombTypes;
 	public bool bombExploding = true;
 
 
